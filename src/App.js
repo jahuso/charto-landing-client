@@ -1,6 +1,9 @@
-import React from 'react';
+import React,{ useState, useEffect } from 'react';
 import './App.css';
+
+
 import LandingPage from './components/LandingPage';
+import RegistrationSuccess from './components/RegistrationSucess';
 import { registerUser } from './api';
 import { v1 as uuidv1 } from 'uuid';
 
@@ -8,49 +11,31 @@ function generateGUID() {
   return uuidv1();
 }
 
-var respuesta ='';
-
-const fetchIpAddress = async () => {
-  try {
-    const response = await fetch('https://api64.ipify.org?format=json');
-    if (response.ok) {
-      const data = await response.json();
-      respuesta = data.ip;
-      console.log(respuesta);
-    } else {
-      console.error('Failed to fetch IP address:', response.status);
-    }
-  } catch (error) {
-    console.error('Error fetching IP address:', error.message);
-  }
-}
-
-console.log(respuesta);
-
-const getLocation = async()=>{
-  const response = await fetch('https://api64.ipify.org');
-  console.log('geogeolocation');
-  return response;
-  // if (response.ok) {
-  //   return response.json();
-  // }else {
-  //   console.error('Failed to fetch IP address:', response.status);
-  // }
-}
-
-
-console.assert(fetchIpAddress());
-//console.assert(getLocation());
-
-
 function App() {
+  const [ipAddress, setIpAddress] = useState('');
+  const [isRegistered, setIsRegistered] = useState(false);
+  useEffect(() => {
+    fetchIpAddress();
+  }, []);
+  const fetchIpAddress = async () => {
+    try {
+      const addressResponse = await fetch('https://api64.ipify.org?format=json');
+      const data = await addressResponse.json();
+      setIpAddress(await data.ip);
+    } catch (error) {
+      console.error('Error fetching IP address:', error);
+    }
+  };
+
   const handleRegister = async (email) => {
     try {
       const globalID = generateGUID();
-      const createdDate = new Date().toLocaleString();
-      const primera = await fetchIpAddress;
-      const response = await registerUser(email, globalID, Date.now);
+      const createdDate = Date.now;
+      console.log(createdDate, new Date());
+      const response = await registerUser(email, globalID, ipAddress, new Date());
+      setIsRegistered(true);
       console.log('Registration successful:', response);
+
       // You can update the UI to show a success message here
     } catch (error) {
       console.error('Registration error:', error.message);
@@ -59,9 +44,16 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <LandingPage onRegister={handleRegister} />
+    <div className='App'>
+      {(isRegistered )?(
+        <RegistrationSuccess/>
+      ):(
+        <LandingPage onRegister={handleRegister} />
+      )}
     </div>
+    // <div className="App">
+    //   <LandingPage onRegister={handleRegister} />
+    // </div>
   );
 }
 

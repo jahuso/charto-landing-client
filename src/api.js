@@ -1,13 +1,14 @@
 const API_URL = 'http://localhost:5126'; // Replace with your actual API URL
 
-const registerUser = async (email, globalID, createdDate) => {
+const registerUser = async (email, globalID, location , createdDate) => {
   try {
-    const response = await fetch(`${API_URL}/api/users`, {
+      const response = await fetch(`${API_URL}/api/users`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({email, globalID, createdDate }),
+      
+      body: JSON.stringify({email, globalID, location, createdDate}),
     });
 
     if (response.ok) {
