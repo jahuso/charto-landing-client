@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './LandingPage.css';
+import logo from '../img/logo.png'
+
 
 const LandingPage = ({ onRegister }) => {
   const [email, setEmail] = useState('');
@@ -7,6 +9,7 @@ const LandingPage = ({ onRegister }) => {
 
   const validateEmail = (email) => {
     const emailPattern = /^(?!.*\.{2})[ ]*[\w]+[\w\.]*[\w]*@[\w]+\.[a-zA-Z]+[ ]*/;
+
     return emailPattern.test(email);
   };
 
@@ -24,8 +27,9 @@ const LandingPage = ({ onRegister }) => {
 
   return (
     <div className="landing-page">
-      <h1>Welcome to Charto's Pre-launch Site
-      <p>Be the first and let it work for you</p></h1>
+      <img src={logo} alt = "logo" style={{ width: '450px', height: '450px' }}/>
+      <h1>Welcome to Charto's Pre-launch Site</h1>
+      {/* <p>Be the first and let it work for you</p> */}
       <p>Join our waiting list by entering your email below:</p>
       <div className="email-input">
         <input

@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/d25cdded-405d-440b-bb9d-8aeded7f3bac/resourceGroups/charto/providers/Microsoft.Web/sites/charto-prelaunch",
+    "appService.deploySubpath": "build"
+}
