@@ -29,9 +29,7 @@ function App() {
 
   const handleRegister = async (email) => {
     try {
-      const globalID = generateGUID();
-      const createdDate = Date.now;
-      console.log(createdDate, new Date());
+      const globalID = generateGUID();   
       const response = await registerUser(email, globalID, ipAddress, new Date());
       setIsRegistered(true);
       console.log('Registration successful:', response);
@@ -51,9 +49,6 @@ function App() {
         <LandingPage onRegister={handleRegister} />
       )}
     </div>
-    // <div className="App">
-    //   <LandingPage onRegister={handleRegister} />
-    // </div>
   );
 }
 

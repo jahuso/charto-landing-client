@@ -1,4 +1,5 @@
-const API_URL = 'http://localhost:5126'; // Replace with your actual API URL
+import AppConfig from './config';
+const API_URL = AppConfig.API_URL; // Replace with your actual API URL
 
 const registerUser = async (email, globalID, location , createdDate) => {
   try {
