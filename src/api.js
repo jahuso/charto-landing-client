@@ -1,5 +1,4 @@
-import AppConfig from './config';
-const API_URL = AppConfig.API_URL; // Replace with your actual API URL
+const API_URL = process.env.REACT_APP_PDN_API;
 
 const registerUser = async (email, globalID, location , createdDate) => {
   try {

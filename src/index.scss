@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+  .TexasCrustFont {
+    font-family: TexasCrust
+  }
+  
+  .TexasTangoFont {
+    font-family: TexasTango
+  }
+  
+  @font-face {
+    font-family: "TexasCrust";
+    src: local("TexasCrust"),
+     url("./fonts/TexasCrust/TexasCrust.ttf") format("truetype");
+    font-weight: bold;
+  }
+  
+  @font-face {
+    font-family: "TexasTango";
+    src: local("TexasTango"),
+     url("./fonts/TexasTango/TexasTango.ttf") format("truetype");
+    font-weight: bold;
+  }
+  
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }

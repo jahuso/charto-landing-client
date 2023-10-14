@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.env
+.vs/VSWorkspaceState.json
+.vs/slnx.sqlite
+.vs/precharto-site/FileContentIndex/read.lock
+.vs/precharto-site/FileContentIndex/77ca81ca-cd60-4e1b-871a-015ebed20c16.vsidx
+.vs/precharto-site/v17/.wsuo

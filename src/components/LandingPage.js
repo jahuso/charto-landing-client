@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import './LandingPage.css';
-import logo from '../img/logo.png'
+import './LandingPage.scss';
+import sombrero from '../img/sombrero.jpg';
+import bigote from '../img/bigote.jpg';
 
 
 const LandingPage = ({ onRegister }) => {
@@ -26,10 +27,11 @@ const LandingPage = ({ onRegister }) => {
   };
 
   return (
-    <div className="landing-page">
-      <img src={logo} alt = "logo" style={{ width: '450px', height: '450px' }}/>
-      <h1>Welcome to Charto's Pre-launch Site</h1>
-      {/* <p>Be the first and let it work for you</p> */}
+    <div className="landing-page TexasCrustFont">
+      <img src={sombrero} alt = "sombrero" style={{ width: '35%', height: '35%' }}/>
+      <h1 className='main-title'>El Charto</h1>
+    <img src={bigote} alt = "sombrero" style={{ width: '35%', height: '35%' }}/>
+      <h1>Welcome to El Charto's Pre-launch Site</h1>
       <p>Join our waiting list by entering your email below:</p>
       <div className="email-input">
         <input
@@ -41,7 +43,7 @@ const LandingPage = ({ onRegister }) => {
         />
         {
           !isValid && email.length > 0 && <p className="error">Invalid email format</p>}
-        <button onClick={handleRegister}>Join Now</button>
+        <button className="boton" onClick={handleRegister}>Subscribe</button>
       </div>
     </div>
   );

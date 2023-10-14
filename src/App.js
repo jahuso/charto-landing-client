@@ -3,7 +3,7 @@ import './App.css';
 
 
 import LandingPage from './components/LandingPage';
-import RegistrationSuccess from './components/RegistrationSucess';
+import RegistrationSuccess from './components/RegistrationSuccess';
 import { registerUser } from './api';
 import { v1 as uuidv1 } from 'uuid';
 
