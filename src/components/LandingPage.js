@@ -28,11 +28,17 @@ const LandingPage = ({ onRegister }) => {
 
   return (
     <div className="landing-page TexasCrustFont">
-      <img src={sombrero} alt = "sombrero" style={{ width: '35%', height: '35%' }}/>
+      <img className='sombrero' src={sombrero} alt = "sombrero"/>
       <h1 className='main-title'>El Charto</h1>
-    <img src={bigote} alt = "sombrero" style={{ width: '35%', height: '35%' }}/>
-      <h1>Welcome to El Charto's Pre-launch Site</h1>
-      <p>Join our waiting list by entering your email below:</p>
+      <img className='sombrero' src={bigote} alt = "sombrero"/>
+      <h1>Welcome to El Charto, Your AI-Powered Chart Creator!🤠</h1>
+
+
+      <p>Are you tired of spending hours crafting charts and graphs for your reports and presentations? Say goodbye to the hassle and let AI do the heavy lifting with El Charto.</p>
+      <p>Just input your data, and watch your charts come to life within seconds.</p>
+      <p>El Charto  analyzes your data and suggests the best chart types for your information.</p>
+
+      <p><u>Join our waiting list</u></p>
       <div className="email-input">
         <input
           type="email"
